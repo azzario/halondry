@@ -55,7 +55,7 @@
                                     <td>{{ $data->kurir == '0' ? 'tidak' : 'iya' }}</td>
                                     <td>
                                         <button class="btn btn-sm btn-info">Detail</button>
-                                        <button class="btn btn-sm btn-warning">Edit</button>
+                                        <a href="{{ url('/cucian/'.$data->id.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
                                         <button data-id="{{ $data->id }}" data-nama="{{ $data->nama_pelanggan }}" class="btn btn-del btn-sm btn-danger">Hapus</button>
                                     </td>
                                 </tr>
@@ -79,6 +79,7 @@
     @section('scripts')
       <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
       <script type="text/javascript" src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('js/deleteRow.js') }}"></script>
       <script type="text/javascript">
         $(document).ready(() => {
           const delButton = $('.btn-del');
@@ -88,7 +89,7 @@
             var nama = $(this).data('nama');
             var id = $(this).data('id');
             var row = $(this).closest('tr');
-            delDialog(nama, id, row);
+            deleteRow(nama, id, row);
           });
         });
 
@@ -99,37 +100,6 @@
               alert.hide('slow', 'easeOutBounce');
             }, 5000);
           }
-        }
-
-        function delDialog(nama, id, row) {
-          swal({
-            title: 'Apakah kamu yakin menghapus '+ nama +' ?',
-            text: "Data akan dihapus secara permanen",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-            if (result.value) {
-              swal(
-                'Sukses',
-                'Data berhasil dihapus.',
-                'success'
-              )
-
-              $.ajax({
-                url: '/api/cucian/delete',
-                method: 'post',
-                data: {
-                  id: id
-                },
-                success: () => {
-                  row.remove();
-                }
-              });
-            }
-          })
         }
       </script>
     @endsection

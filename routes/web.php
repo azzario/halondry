@@ -18,6 +18,8 @@ Route::get('/', 'PagesController@index');
 Route::get('/cucian', 'CucianController@index');
 Route::get('/cucian/create', 'CucianController@create');
 Route::post('/cucian', 'CucianController@store');
+Route::get('/cucian/{id}/edit', 'CucianController@edit');
+Route::get('/cucian/{id}', 'CucianController@show');
 
 //Route lokasi
 Route::get('/loc', 'LokasiController@getLokasi');

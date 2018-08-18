@@ -19,7 +19,7 @@
     @endif
     <ul class="nav menu">
         <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}"><em class="fa fa-dashboard">&nbsp;</em> Menu Utama</a></li>
-        <li class="{{ (Request::is('cucian') || Request::is('cucian/create')) ? 'active' : '' }}"><a href="{{ url('/cucian') }}"><em class="fa fa-calendar">&nbsp;</em> Cucian</a></li>
+        <li class="{{ (Request::is('cucian') || Request::is('cucian/create') || Request::is('cucian/*/edit')) ? 'active' : '' }}"><a href="{{ url('/cucian') }}"><em class="fa fa-calendar">&nbsp;</em> Cucian</a></li>
         <li><a href="charts.html"><em class="fa fa-bar-chart">&nbsp;</em> Order</a></li>
         <li><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> Pelanggan</a></li>
         <li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em>Kurir</a></li>

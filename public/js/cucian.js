@@ -21,13 +21,13 @@ function wrapLoc (loc) {
     map.addLayer(markersLayer);
 
     var controlSearch = new L.Control.Search({
-		position:'topright',		
+		position:'topright',
 		layer: markersLayer,
 		initial: false,
 		zoom: 12,
 		marker: false
     });
-    
+
     map.addControl(controlSearch);
     renderMap(map);
 
@@ -41,7 +41,7 @@ function wrapLoc (loc) {
         marker.on('dragend', function() {
             console.log(marker.getLatLng());
         });
-        
+
         marker.bindPopup('Kota: '+ nama );
 		markersLayer.addLayer(marker);
     }
@@ -64,7 +64,6 @@ function getHarga (nama, qty) {
             qty: qty
         },
         success: function(data) {
-            console.log(data);
             $('.harga').text(data);
         }
     });

@@ -39,6 +39,13 @@ class CucianController extends Controller
       $cucian->delete();
     }
 
+    public function edit($id)
+    {
+      $cucian = Cucian::findOrFail($id);
+
+      return view('cucian.edit', compact('cucian'));
+    }
+
     private $rules = [
       'nama_pelanggan'            => 'required',
       'berat'                     => 'required',
