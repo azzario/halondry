@@ -11,13 +11,13 @@
                 <li class="active">Menu Utama</li>
             </ol>
         </div><!--/.row-->
-        
+
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Menu Utama</h1>
             </div>
         </div><!--/.row-->
-        
+
         <div class="panel panel-container">
             <div class="row">
                 <div class="col-xs-6 col-md-3 col-lg-3 no-padding">
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div><!--/.row-->
-        
+
         <div class="row">
             <div class="col-xs-6 col-md-3">
                 <div class="panel panel-default">
@@ -126,7 +126,7 @@
                 </div>
             </div>
         </div><!--/.row-->
-        
+
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default chat">
@@ -284,8 +284,8 @@
                     </div>
                 </div>
             </div><!--/.col-->
-            
-            
+
+
             <div class="col-md-6">
                 <div class="panel panel-default ">
                     <div class="panel-heading">

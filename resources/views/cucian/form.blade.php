@@ -57,7 +57,7 @@
             </tr>
             <tr>
                 <th>Total Harga : </th>
-                <td>&nbsp; Rp. 4000,-</td>
+                <td>&nbsp; Rp. 0,-</td>
             </tr>
         </table>
     </div>

@@ -1,6 +1,10 @@
 @extends('template.master')
     @section('title', 'Cucian')
 
+    @section('styles')
+      <link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
+    @endsection
+
     @section('content')
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
         <div class="row">
@@ -52,7 +56,7 @@
                                     <td>
                                         <button class="btn btn-sm btn-info">Detail</button>
                                         <button class="btn btn-sm btn-warning">Edit</button>
-                                        <button class="btn btn-sm btn-danger">Hapus</button>
+                                        <button data-id="{{ $data->id }}" data-nama="{{ $data->nama_pelanggan }}" class="btn btn-del btn-sm btn-danger">Hapus</button>
                                     </td>
                                 </tr>
                               @endforeach
@@ -74,8 +78,19 @@
 
     @section('scripts')
       <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
       <script type="text/javascript">
-        checkAlert();
+        $(document).ready(() => {
+          const delButton = $('.btn-del');
+          checkAlert();
+
+          delButton.on('click', function() {
+            var nama = $(this).data('nama');
+            var id = $(this).data('id');
+            var row = $(this).closest('tr');
+            delDialog(nama, id, row);
+          });
+        });
 
         function checkAlert() {
           var alert = $('.alert');
@@ -84,6 +99,37 @@
               alert.hide('slow', 'easeOutBounce');
             }, 5000);
           }
+        }
+
+        function delDialog(nama, id, row) {
+          swal({
+            title: 'Apakah kamu yakin menghapus '+ nama +' ?',
+            text: "Data akan dihapus secara permanen",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.value) {
+              swal(
+                'Sukses',
+                'Data berhasil dihapus.',
+                'success'
+              )
+
+              $.ajax({
+                url: '/api/cucian/delete',
+                method: 'post',
+                data: {
+                  id: id
+                },
+                success: () => {
+                  row.remove();
+                }
+              });
+            }
+          })
         }
       </script>
     @endsection

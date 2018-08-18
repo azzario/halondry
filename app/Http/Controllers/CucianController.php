@@ -33,6 +33,12 @@ class CucianController extends Controller
         return redirect('/cucian')->with('success', 'Data berhasil ditambah');
     }
 
+    public function delete(Request $request)
+    {
+      $cucian = Cucian::find($request->id);
+      $cucian->delete();
+    }
+
     private $rules = [
       'nama_pelanggan'            => 'required',
       'berat'                     => 'required',
