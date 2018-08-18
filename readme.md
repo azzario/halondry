@@ -1,27 +1,17 @@
-## Antvel Introduction
-
-<a href="https://packagist.org/packages/ant-vel/Shop"><img src="https://img.shields.io/packagist/dt/antvel/shop.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/ant-vel/Shop"><img src="https://img.shields.io/packagist/v/antvel/shop.svg" alt="Latest Stable Version"></a>
-<a href="https://github.com/ant-vel/Shop"><img src="https://img.shields.io/badge/Core%20Package-Shop-brightgreen.svg" alt="Latest Stable Version"></a>
+## Halondry App
 
 
-
-***Antvel*** is an ecommerce project written in Laravel 5.* intended for building a friendly eStore either for startups or big companies.
-
-In spite of ***Antvel*** seems to be a whole couple app, it is powered by its <a href="https://github.com/ant-vel/Shop" target="_blank">core shop</a> which is a package that allows you to build a complete e-commerce based application for your needs.
-
-***Antvel*** is in current development, receiving a ```whole rewrite``` from top to bottom toward a more stable platform where you might feel comfortable to walk along with.
+***Halondry*** adalah sebuah aplikasi yang dibangun dengan framework laravel 5.* dengan sistem gis menggunakan leaflet.js.
 
 
-<a name="installation"></a>
-## Installation
+<a name="instalasi"></a>
+## Instalasi
 
-Antvel uses [Composer](https://getcomposer.org) to manage its dependencies. So, before using it, make sure you have Composer installed on your machine.
+Halondry beberapa package pada [Composer](https://getcomposer.org) sebagai dependencies manager, pastikan composer telah terinstall.
 
+Pertama, ketikan perintah ini pada terminal (harus sudah masuk pada direktori aplikasi):
 
-First, download the Antvel installer through Composer:
-
-    composer global require "antvel/installer"
+    composer install
 
 Make sure to place the `$HOME/.composer/vendor/bin` directory (or the equivalent directory for your OS) in your $PATH so the `antvel` executable can be located by your system.
 
