@@ -1,40 +1,123 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+## Antvel Introduction
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<a href="https://packagist.org/packages/ant-vel/Shop"><img src="https://img.shields.io/packagist/dt/antvel/shop.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/ant-vel/Shop"><img src="https://img.shields.io/packagist/v/antvel/shop.svg" alt="Latest Stable Version"></a>
+<a href="https://github.com/ant-vel/Shop"><img src="https://img.shields.io/badge/Core%20Package-Shop-brightgreen.svg" alt="Latest Stable Version"></a>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+***Antvel*** is an ecommerce project written in Laravel 5.* intended for building a friendly eStore either for startups or big companies.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+In spite of ***Antvel*** seems to be a whole couple app, it is powered by its <a href="https://github.com/ant-vel/Shop" target="_blank">core shop</a> which is a package that allows you to build a complete e-commerce based application for your needs.
 
-## Learning Laravel
+***Antvel*** is in current development, receiving a ```whole rewrite``` from top to bottom toward a more stable platform where you might feel comfortable to walk along with.
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+<a name="installation"></a>
+## Installation
+
+Antvel uses [Composer](https://getcomposer.org) to manage its dependencies. So, before using it, make sure you have Composer installed on your machine.
+
+
+First, download the Antvel installer through Composer:
+
+    composer global require "antvel/installer"
+
+Make sure to place the `$HOME/.composer/vendor/bin` directory (or the equivalent directory for your OS) in your $PATH so the `antvel` executable can be located by your system.
+
+Once installed, the `antvel install` command will create a fresh copy of the project in the directory you provided. For example, `antvel install` will create a directory named `App-master` containing a fresh Antvel installation with all of its dependencies already installed:
+
+    antvel install
+
+
+<a href="https://github.com/ant-vel/Installer" _target="blank">More info</a>
+
+
+
+<a name="features"></a>
+## Features
+
+* Responsivity
+* Open Source
+* Social Media Integration
+* Unlimited Categories
+* Unlimited Products
+* Your Own Style
+* Multi Language
+* Product Reviews
+* Product Ratings
+* Automatic Image Resizing
+* Related Products (What other customers are looking at, Recommendations for you in our categories, Store Trending)
+* Search Engine Optimization
+* Sales Reports
+* Wish Lists
+* Products Suggestions
+* Products Grouping (http://antvel.com/products/42)
+* Addresses Book
+* User Profiles (Sellers & Buyers)
+* Products barcode
+* Administrative Panel - (http://antvel.com/dashboard)
+* Users Orders list with action status (process, Placed, Cancel, Rated)
+* Dynamic Products Features
+* Company Profile
+* Shopping Cart
+* Users preferences control
+* Users Notifications
+* Company Info CMS
+* Search Engine Suggestions
+* Dynamic Breadcrumbs
+
+
+## Dashboard
+
+Here, you will be able to manage the base information of your store, such as categories, products features and more.
+
+At the moment, the panel just has the module to manage the store categories, products and products features. However, it is intended to be the replacement for ***wpanel***.
+
+You will be able to visit this section by typing this address within your installed app, as so ```http://app.dev/dashboard```. Once the whole ***wpanel*** is migrated to it, we will be updating the references in the app. Remember, you will have to be logged in either as seller or admin.
+
+
+
+
+## Demo
+
+* <a href="http://antvel.com" target="_blank">http://antvel.com</a>
+* Admin: admin@antvel.com / admin
+* Buyer: buyer@antvel.com / admin
+* Seller: seller@antvel.com / admin
+
+
+## To do list
+If you like antvel and want to contribute, you can check this task list.
+
+<a href="https://github.com/ant-vel/Discussion/issues" target="_blank">https://github.com/ant-vel/Discussion/issues</a>
+
+
+
+## Chat Rooms
+
+We keep the conversation going in our ***Slack*** channel, so if you would, you can ask us how.
+
+
+## Gratipay Profile
+
+<a href="https://gratipay.com/Antvel/" target="_blank">https://gratipay.com/Antvel/</a>
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Please feel free to fork this package and contribute by submitting a pull request to enhance the functionalities.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The MIT License (MIT). Please see [License File](https://github.com/ant-vel/App/blob/master/LICENSE) for more information.
+
+
+## How can I thank you?
+Why not star the github repo and share the link for this repository on Twitter?
+
+
+Don't forget to [follow me on twitter](https://twitter.com/gocanto)!
+
+Thanks!
+
+Gustavo Ocanto.
