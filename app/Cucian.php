@@ -21,4 +21,9 @@ class Cucian extends Model
         return $this->attributes['id_pelanggan'] = '0';
       }
     }
+
+    public function getKurirAttribute($value)
+    {
+      return ucfirst($value);
+    }
 }

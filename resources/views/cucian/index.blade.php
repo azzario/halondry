@@ -54,7 +54,7 @@
                                     <td>{{ $data->berat }} Kg</td>
                                     <td>{{ $data->kurir == '0' ? 'tidak' : 'iya' }}</td>
                                     <td>
-                                        <button class="btn btn-sm btn-info">Detail</button>
+                                        <a href="{{ url('/cucian/'.$data->id) }}" class="btn btn-sm btn-info">Detail</a>
                                         <a href="{{ url('/cucian/'.$data->id.'/edit') }}" class="btn btn-sm btn-warning">Edit</a>
                                         <button data-id="{{ $data->id }}" data-nama="{{ $data->nama_pelanggan }}" class="btn btn-del btn-sm btn-danger">Hapus</button>
                                     </td>

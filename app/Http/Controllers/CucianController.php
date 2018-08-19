@@ -46,6 +46,18 @@ class CucianController extends Controller
       return view('cucian.edit', compact('cucian'));
     }
 
+    public function show($id)
+    {
+      $cucian = Cucian::find($id);
+      return view('cucian.show', compact('cucian'));
+    }
+
+
+
+
+
+
+
     private $rules = [
       'nama_pelanggan'            => 'required',
       'berat'                     => 'required',
