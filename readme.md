@@ -8,7 +8,7 @@
 ## Instalasi
 
 
-* git clone https://github.com/azzario/helondry.git halondry
+* git clone https://github.com/azzario/halondry.git halondry
 * cd halondry
 * composer install
 * cp .env.example .env
