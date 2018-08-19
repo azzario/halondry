@@ -57,7 +57,7 @@ crossorigin=""/>
             </tr>
             <tr>
                 <th>Kurir : </th>
-                <td>&nbsp; Rp. 0,-</td>
+                <td>&nbsp; Rp. <span class="kurir">0</span>,-</td>
             </tr>
             <tr>
                 <th>Diskon : </th>
@@ -101,9 +101,11 @@ crossorigin=""></script>
                 $('#maps').show('slow', 'easeInOutCirc');
                 //fungsi get lokasi yg sudah ditentukan di database
                 getLokasi();
+                $('.kurir').text('7,000');
             } else {
                 $('.maps-divider').hide('slow', 'easeInOutCirc');
                 $('#maps').hide('slow', 'easeOutBounce');
+                $('.kurir').text('0');
             }
         });
 

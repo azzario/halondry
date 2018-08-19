@@ -8,12 +8,12 @@ class Cucian extends Model
 {
     protected $table    =  'cucian';
     protected $fillable =  [
-                              'id_pelanggan',
-                              'nama_pelanggan',
-                              'kurir',
-                              'id_maps',
-                              'berat'
-                            ];
+      'id_pelanggan',
+      'nama_pelanggan',
+      'kurir',
+      'id_maps',
+      'berat'
+    ];
 
     public function setIdPelangganAttribute($value)
     {
@@ -25,5 +25,10 @@ class Cucian extends Model
     public function getKurirAttribute($value)
     {
       return ucfirst($value);
+    }
+
+    public function order()
+    {
+      return $this->hasOne('App\Order', 'id_cucian');
     }
 }

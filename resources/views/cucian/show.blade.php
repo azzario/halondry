@@ -49,7 +49,7 @@
                             <td>{{ $cucian->kurir }}</td>
                           </tr>
                         </table>
-                        <hr>
+                        <h3>Jumlah</h3>
                         <table class="table">
                           <tr>
                             <th>Harga :</th>
@@ -68,6 +68,8 @@
                             <td></td>
                           </tr>
                         </table>
+                        <br>
+                        <a href="{{ url()->previous() }}" class="btn btn-danger">Kembali</a>
                       </div>
                       <div class="col-md-6">
                         <div id="maps" style="width:100%; height:300px"></div>
