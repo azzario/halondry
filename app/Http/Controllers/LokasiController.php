@@ -9,8 +9,9 @@ class LokasiController extends Controller
 {
     public function getLokasi()
     {
-        $loc    = Lokasi::all();
+        $loc    = Lokasi::where('nama', '!=', 'kantor')->get();
+        $kantor = Lokasi::where('nama', '=', 'kantor')->get();
 
-        return response()->json(['loc' => $loc]);
+        return response()->json(['loc' => $loc, 'kantor' => $kantor]);
     }
 }

@@ -1,23 +1,48 @@
-function getLokasi () {
+var iconKantor = L.icon({
+  iconUrl: '../images/marker-halondry.png',
+  iconSize: [40,75],
+});
+
+var map;
+
+
+
+function getLokasi() {
     $.ajax({
         url: '/loc',
         method: 'get',
         success: function(data) {
             var loc = data.loc;
-            wrapLoc(loc);
+            var locKantor = data.kantor;
+            wrapLoc(loc, locKantor);
         }
     });
 }
 
-function wrapLoc (loc) {
-    var notParse    = loc[0].latlng;
-    var a           = notParse.split(',').map(function(item) {
-                        return parseFloat(item);
-                    });
+function maps(latlng)
+{
+  map = new L.Map('maps', {zoom: 14, center: new L.latLng(latlng) });
+  var markerKantor = L.marker(latlng, {icon: iconKantor}).addTo(map);
+  markerKantor.bindPopup('Halondry');
+  map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
 
-    var map = new L.Map('maps', {zoom: 10, center: new L.latLng(a) });	//set tengah dari lokasi pertama
-    map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));	//base layer
-    var markersLayer = new L.LayerGroup();	//buat layer baru
+  renderMap(map);
+}
+
+function wrapLoc (loc, locKantor) {
+    var notParse    = loc[0].latlng;
+    var latLngKantor = locKantor[0].latlng;
+
+    var a           = notParse.split(',').map(function(item) {
+      return parseFloat(item);
+    });
+    var kantor      = latLngKantor.split(',').map((item) => {
+      return parseFloat(item);
+    });
+
+    maps(kantor);
+
+    var markersLayer = new L.LayerGroup();
     map.addLayer(markersLayer);
 
     var controlSearch = new L.Control.Search({
@@ -29,26 +54,21 @@ function wrapLoc (loc) {
     });
 
     map.addControl(controlSearch);
-    renderMap(map);
 
     for(i in loc) {
-		var nama            = loc[i].nama;	//value searched
-		var notParseLoop    = loc[i].latlng;
-        var aLoop           = notParseLoop.split(',').map(function(item) {
-                                return parseFloat(item);
-                            });
-        var	marker = new L.Marker(new L.latLng(aLoop), {title: nama, draggable: true} );//set property searched
-        marker.on('dragend', function() {
-            console.log(marker.getLatLng());
-        });
+  		    var nama            = loc[i].nama;
+  		    var notParseLoop    = loc[i].latlng;
+          var aLoop           = notParseLoop.split(',').map(function(item) {
+                                  return parseFloat(item);
+                              });
+          var	marker = new L.Marker(new L.latLng(aLoop) ,{title: nama, draggable: true} );
+          marker.on('dragend', function() {
+              console.log(marker.getLatLng());
+          });
 
-        marker.bindPopup('Kota: '+ nama );
-		markersLayer.addLayer(marker);
+          marker.bindPopup(nama);
+		      markersLayer.addLayer(marker);
     }
-}
-
-function customIcon () {
-    //var laundryIcon = '';
 }
 
 function renderMap (map) {
