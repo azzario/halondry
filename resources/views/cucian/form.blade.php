@@ -136,6 +136,10 @@ crossorigin=""></script>
             //jalankan ajax get harga
             getHarga(nama, qty);
         });
+
+        $('.btn-add-tip').on('click', function() {
+          addMarker();
+        });
     });
 </script>
 @endsection

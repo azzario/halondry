@@ -5,8 +5,6 @@ var iconKantor = L.icon({
 
 var map;
 
-
-
 function getLokasi() {
     $.ajax({
         url: '/loc',
@@ -47,4 +45,13 @@ function getHarga (nama, qty) {
             $('.harga').text(data);
         }
     });
+}
+
+function addMarker()
+{
+  var markerDrop = L.marker([-6.545953, 107.777033], {draggable: true}).addTo(map);
+  markerDrop.bindPopup('Lokasi');
+  markerDrop.on('dragend', function(e) {
+    console.log(markerDrop.getLatLng());
+  });
 }
