@@ -4,6 +4,20 @@ integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh
 crossorigin=""/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 <link rel="stylesheet" href="{{ asset('css/leaflet-search.css') }}">
+
+<style>
+  #maps {
+    width:100%;
+    height:400px;
+    display:none;
+  }
+  .btn-add-tip {
+    display: none;
+  }
+  .maps-divider {
+    display: none;
+  }
+</style>
 @endsection
 
 <form class="form-horizontal row-border" action="{{ url('/cucian') }}" method="POST">
@@ -46,8 +60,12 @@ crossorigin=""/>
         </div>
     </div>
     <div class="divider"></div>
-    <hr class="maps-divider" style="display:none">
-    <div id="maps" style="width:100%; height:400px; display:none"></div>
+    <hr class="maps-divider">
+    <div class="map-wrapper">
+      <div id="maps"></div>
+    </div>
+    <br>
+    <button type="button" class="btn-add-tip btn btn-sm btn-info"><i class="glyphicon glyphicon-map-marker"></i></button>
     <hr>
     <div class="col-md-6">
         <table>
@@ -99,6 +117,7 @@ crossorigin=""></script>
             if($(this).val() == 'iya') {
                 $('.maps-divider').show('slow', 'easeInOutCirc');
                 $('#maps').show('slow', 'easeInOutCirc');
+                $('.btn-add-tip').show();
                 //fungsi get lokasi yg sudah ditentukan di database
                 getLokasi();
                 $('.kurir').text('7,000');
@@ -106,6 +125,7 @@ crossorigin=""></script>
                 $('.maps-divider').hide('slow', 'easeInOutCirc');
                 $('#maps').hide('slow', 'easeOutBounce');
                 $('.kurir').text('0');
+                $('.btn-add-tip').hide();
             }
         });
 

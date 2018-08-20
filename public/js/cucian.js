@@ -33,11 +33,6 @@ function wrapLoc (locKantor) {
     });
 
     maps(kantor);
-    renderMap(map);
-}
-
-function renderMap (map) {
-    map.invalidateSize();
 }
 
 function getHarga (nama, qty) {
