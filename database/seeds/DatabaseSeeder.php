@@ -11,6 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(RefHargaTableSeeder::class);
+        $this->call(LokasiTableSeeder::class);
     }
 }
